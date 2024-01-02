@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex08_css_structural</title>
+    <style>
+        /*
+            ┌──────────────────────────────────────────┐
+            │ ◆ 구조 가상 클래스                       
+            └──────────────────────────────────────────┘
+            - 계층 구조에서 특정한 위치를 선택하기 위한 가상 클래스
+            - 특정 선택자에서 '맨 앞'이나 '2번째 뒤' 등 기존 선택자에선 한계가 있는 특정한 위치를 지정
+
+            ───────────────────────────────────────────────────────────────────────────────────────
+            :first-child
+            - 모든 자식 요소(부모 요소가 있는) 중에 맨 앞에 있는 요소
+
+            :last-child
+            - 모든 자식 요소(부모 요소가 있는) 중에 맨 뒤에 있는 요소
+
+            :nth-child()
+            - 모든 자식 요소(부모 요소가 있는) 중에 앞에서 n번째에 있는 요소
+            - () 안에는 자연수나 n이 들어감
+
+            :nth-last-child()
+            - 모든 자식 요소 중에 뒤에서 n번째에 있는 요소
+
+            :first-of-type
+            :last-of-type
+            :nth-of-type()
+            :nth-last-of-type()
+            ───────────────────────────────────────────────────────────────────────────────────────
+        */
+
+        .test1 {
+            border:2px solid black;
+            padding: 5px;
+        }
+
+        .test2 {
+            border:2px solid salmon;
+            padding: 5px;
+        }
+
+        .test3 {
+            border:2px solid greenyellow;
+            padding: 5px;
+        }
+
+        .test4 {
+            border: 2px solid turquoise;
+            padding: 5px;
+        }
+
+        /* .test2 내부의 요소 중 첫 번째 것이 p면 선택 */
+        .test2 p:first-child {
+            color: red;
+            font-weight: bold;
+        }
+
+        /* .test3 내부의 요소 중 마지막 것이 p면 선택 */
+        .test3 p:last-child {
+            color: blue;
+            font-weight: bold;
+        }
+
+        /* test4 내부의 2n(n = 0 이상의 정수)번째 요소 중 p인 것을 선택 */
+        .test4 p:nth-child(2n) {
+            color:tomato;
+            font-weight: bold;
+        }
+
+        /* test4 내부의 3n(n= 0 이상의 정수)번째 요소 중 p인 것을 아래쪽부터 세어 선택 */
+        .test4 p:nth-last-child(3n){
+            color: olive;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <h1> 구조 가상 클래스 연습 </h1>
+    <div class="test1">
+        <div class="test2">
+            <p>이 p 태그는 div태그의 child입니다.</p>
+            <p>이 p 태그는 div태그의 child입니다.</p>
+            <p>이 p 태그는 div태그의 child입니다.</p>
+        </div>  
+        <div class="test3">
+            <p>이 p 태그는 div태그의 child입니다.</p>
+            <p>이 p 태그는 div태그의 child입니다.</p>
+            <p>이 p 태그는 div태그의 child입니다.</p>
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <div class="test4">
+        <p>이 p 태그는 div태그의 1번째 child입니다. 뒤에서 6번째</p>
+        <p>이 p 태그는 div태그의 2번째 child입니다. 뒤에서 5번째</p>
+        <p>이 p 태그는 div태그의 3번째 child입니다. 뒤에서 4번째</p>
+        <p>이 p 태그는 div태그의 4번째 child입니다. 뒤에서 3번째</p>
+        <p>이 p 태그는 div태그의 5번째 child입니다. 뒤에서 2번째</p>
+        <p>이 p 태그는 div태그의 6번째 child입니다. 뒤에서 1번째</p>
+    </div>
+</body>
+</html>

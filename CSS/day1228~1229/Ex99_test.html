@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex99_test</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        fieldset {
+            border: 1px solid black;
+            width: 1000px;
+            margin: auto;
+        }
+
+        header {
+            display: block;
+            padding: 35px 60px;
+        }
+
+        #title {
+            font-size: 31px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        menu {
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
+            padding: 10px 0px 10px 15px;
+            margin: 10px 15px 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .menuselect {
+            outline: none;
+            border: 1px solid gray;
+        }
+
+        #leftmenu {
+            display: flex;
+            width: 300px;
+            justify-content: space-between;
+        }
+
+        input[type="text"] {
+            outline: none;
+            border: 1px solid gray;
+        }
+
+        section {
+            display: grid;
+            height: 500px;
+            row-gap: 20px;
+            column-gap: 10px;
+            grid-template-columns: 760px 1fr;
+        }
+
+        #article {
+            grid-row : 1 / span 2;
+            padding: 15px;
+        }
+
+        #article * {
+            margin-bottom: 15px;
+        }
+
+        #article p:not(#articletitle) {
+            font-size: 14px;
+        }
+
+        #articletitle {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        footer {
+            border-top: 1px solid gray;
+            padding: 10px 0px 15px;
+            margin: 10px 15px 0px;
+            font-size: 15px;
+        }
+
+        .sidemenu li {
+            color: rgb(179, 179, 179);
+            margin-top: 5px;
+            margin-left: 10px;
+        }
+
+        .sidetitle {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <header>
+            <p id="title">HTML5 Example Preview</p>
+            <p>한빛아카데미</p>
+        </header>
+        <menu>
+            <div id="leftmenu">
+                <select class="menuselect">
+                    <option value="HTML-5" selected>HTML-5</option>
+                    <option value="HTML-6">HTML-6</option>
+                    <option value="HTML-7">HTML-7</option>
+                </select>
+                <select class="menuselect">
+                    <option value="CSS3" selected>CSS3</option>
+                    <option value="CSS4">CSS4</option>
+                    <option value="CSS5">CSS5</option>
+                </select>
+                <select class="menuselect">
+                    <option value="JavaScript" selected>JavaScript</option>
+                    <option value="C++">C++</option>
+                    <option value="Python">Python</option>
+                </select>
+            </div>
+            <div id="rightmenu">
+                <input type="text"><button>검색</button>
+            </div>
+        </menu>
+        <section>
+            <div id="article">
+                <p id="articletitle">HTML5 개요와 활용</p>
+                <p>2019년 02월 14일</p>
+                <img src="apple.PNG" alt="no image" width="430px" height="280px">
+                <p>테스트데이터</p>
+            </div>
+            <div class="sidemenu">
+                <p class="sidetitle">카테고리</p>
+                <ul>
+                    <li>데이터</li>
+                    <li>데이터</li>
+                    <li>데이터</li>
+                    <li>데이터</li>
+                </ul>
+            </div>
+            <div class="sidemenu">
+                <p class="sidetitle">최근 글</p>
+                <ul>
+                    <li>데이터</li>
+                    <li>데이터</li>
+                    <li>데이터</li>
+                    <li>데이터</li>
+                </ul>
+            </div>
+        </section>
+        <footer>IT Cookbook HTML5 Programming</footer>
+    </fieldset>
+</body>
+</html>

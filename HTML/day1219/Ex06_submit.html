@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex06_submit</title>
+</head>
+<body>
+    <!--
+        action과 method
+
+        action = 이동할 페이지 주소
+        method = 전송방법
+    -->
+    <form action="Ex99_test.html" method="get"> 
+
+        이름 : <input type="text" name="userName">
+        별명 : <input type="text" name="userNick">
+
+        <!-- form 태그 내부에 있는 모든 input 태그의 정보를 전달 - 서버나 다음 페이지로
+            
+            어떤 input 태그의 정보인지 선별하기 위해 name 속성을 사용
+            input의 name 속성 : 서버와 통신할 때 사용하는 값, 전달되어지는 값에 대한 키(key)
+        -->
+        <input type="submit" value="제출"> <!--form의 action에 있는 Ex99_test에 이름과 별명의 입력값을 제출-->
+        <!--
+            제출할 경우 주소창에 userName과 userNick의 이름으로 입력값이 제출됨
+            ex) 이름에 sss, 별명에 ddd를 제출하면 userName=sss, userNick=ddd
+        -->
+
+        <!--
+            태그의 속성
+
+            type, id, name, value, min, max, border 등등
+
+            - 태그마다 적용되는 속성의 종류가 다르다
+              input 태그는 type이 있지만 p 태그는 type 속성이 미존재
+
+            - 모든 태그에 동일하게 사용되는 속성이 존재
+              id, class, name
+            - 상기 3가지 태그는 태그의 모양이나 외형을 담당하지 않고 태그들을 구분/관리하기 위해 사용하는 속성
+            
+            id : id="속성값"
+            - 태그의 고유 값으로 사용하는 속성
+            - CSS, JS같은 언어를 사용할 때 특정 태그를 선택하는 값으로 사용
+            - '하나'의 태그를 선택하려고 할 때 속성을 부여
+            
+            class : class="속성값 속성값"
+            - 태그의 그룹화를 하기 위한 속성
+            - CSS, JS 사용할 때 특정 태그를 선택하기 위해 사용
+            - 여러 개의 태그를 선택하려고 할 때 속성을 부여
+
+            name : name="속성값"
+            - 태그의 값을 서버로 전달하는 속성, radio 버튼의 그룹화가 가능
+            - CSS, JS 사용할 때 특정 태그를 선택하기 위해 사용
+            - id, class의 기능(그룹화 등)을 하면서도 서버 전달도 한다
+        -->
+    </form>
+</body>
+</html>

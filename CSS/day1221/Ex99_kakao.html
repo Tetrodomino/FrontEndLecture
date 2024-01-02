@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex99_kakao</title>
+    <style>
+        body {
+            font-family:'Malgun Gothic';
+        }
+        
+        header {
+            text-align: center;
+            margin: 100px 0px 35px 0px;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        section{
+            border: 1px solid rgb(226, 226, 226);
+            padding: 80px 20px 60px;
+            margin:auto;
+            width:550px;
+        }
+
+        .login {
+            align-self: center;
+            margin:0px 60px 20px 60px;
+            width: 420px;
+            outline: none;
+            border-left: 0px ;
+            border-right: 0px;
+            border-bottom: 2px solid rgb(148, 148, 148);
+            border-top: 0px;
+            font-size: 18px;
+            padding: 2px 2px 5px 2px;
+        }
+        .login::placeholder {
+            color: rgb(148, 148, 148);
+        }
+
+        /*.row {
+            font-weight: bold;
+            color: rgb(200, 200, 200);
+            margin: 0px 0px 15px 0px;
+        }*/
+
+        .emptyspace {
+            height: 80px;
+        }
+
+        .middle {
+            background-size: 420px;
+            margin:0px 60px 5px 60px;
+            text-align: center;
+            vertical-align: middle;
+            width: 420px;
+            padding: 15px 0px; /* 패딩으로 높이 조절하는 것이 좋음 */
+            font-size: 15px;
+            font-family:'Malgun Gothic';
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        #loginbutton:link {
+            text-decoration: none;
+            background-color: #fee500;
+            color: black;
+        }
+
+        #loginbutton:visited {
+            text-decoration: none;
+            background-color: #fee500;
+            color: black;
+        }
+
+        #loginbutton:hover {
+            text-decoration: none;
+            background-color: #d1c12e;
+            color: black;
+        }
+
+        #loginbutton:active {
+            text-decoration: none;
+            background-color: #d1c12e;
+            color: black;
+        }
+
+        .hide {
+            text-align: center;
+            color: rgb(148, 148, 148);
+            font-size: 12px;
+        }
+        #QRloginbutton:link {
+            text-decoration: none;
+            background-color: #dfded7;
+            color: black;
+        }
+
+        #QRloginbutton:visited {
+            text-decoration: none;
+            background-color: #dfded7;
+            color: black;
+        }
+
+        #QRloginbutton:hover {
+            text-decoration: none;
+            background-color: #adaca2;
+            color: black;
+        }
+
+        #QRloginbutton:active {
+            text-decoration: none;
+            background-color: #adaca2;
+            color: black;
+        }
+
+        .bottom {
+            font-size: 12px;
+        }
+        #leftb {
+            margin: 20px 220px 20px 60px;
+        }
+        #rightb {
+            align-self: right;
+            margin: 20px 60px 20px 0px;
+        }
+
+        footer {
+            text-align: center;
+            margin: 70px 0px 0px 0px;
+        }
+        .bottom2 {
+            font-size: 12px;
+            margin: 0px 10px 0px 10px;
+        }
+        .bottom4 {
+            font-size: 10px;
+            margin: 0px 0px 0px 0px;
+        }
+
+        #bottom3 {
+            color: rgb(185, 185, 185);
+            margin: 5px 0px 0px 0px;
+        }
+
+        #bottomlink {
+            text-decoration: none;
+            color: rgb(185, 185, 185);
+            font-weight: bold;
+            margin: 0px 0px 0px 0px;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        kakao
+    </header>
+    <section>
+        <input class="login" type="email" placeholder="카카오메일 아이디, 이메일, 전화번호">
+        <input class="login" type="password" placeholder="비밀번호">
+        <!-- <p class="row">───────────────────────────</p>-->
+
+        <div class="emptyspace"></div>
+        <a class="middle" id="loginbutton" href="#">로그인</a>
+        <p class="hide">또는</p>
+        <a class="middle" id="QRloginbutton" href="#">QR코드 로그인</a>
+        <span class="bottom" id="leftb">회원가입</span> <span class="bottom" id="rightb">계정 찾기 &nbsp;&nbsp;&nbsp; 비밀번호 찾기</span>
+    </section>
+    <footer>
+        <div>
+            <span class="bottom2">이용약관</span>
+            <span class="bottom2" style="font-weight: bold;">개인정보 처리방침</span>
+            <span class="bottom2">운영정책</span>
+            <span class="bottom2">고객센터</span>
+            <span class="bottom2">공지사항</span>
+            <span class="bottom2">한국어△</span>
+        </div>
+        <div id="bottom3">
+            <span class="bottom4">Copyright</span> <a href="https://www.kakaocorp.com/page/" id="bottomlink" target="_blank">ⓒ Kakao Corp</a>. <span class="bottom4">All rights reserved</span>
+        </div>
+    </footer>
+</body>
+</html>

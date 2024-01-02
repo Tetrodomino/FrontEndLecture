@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex99_test</title>
+</head>
+<body>
+    <h1>Ex99_test 파일</h1>
+
+    <script>
+        // submit.html에서 넘겨준 이름을 저장하는 것을 javascript로 구현한다
+        var urlParam = new URL(location.href).searchParams;
+        var name = urlParam.get('userName'); //name 속성이 userName 인 값을 변수에 저장
+        document.write("이름 : "+name + "<br/>");
+        var nick = urlParam.get('userNick');
+        document.write("별명 : "+nick + "<br/>"); //입력받은 input 값 두 개 중 별명을 출력하는 문구
+    </script>
+</body>
+</html>

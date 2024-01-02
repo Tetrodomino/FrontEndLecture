@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex07_css_states</title>
+    <style>
+        /*
+            상태 가상 클래스
+
+            - 현재 태그의 상태에 따라서 스타일 적용
+            ex) 체크가 되어있는 상태, 체크가 안 되어있는 상태
+
+            :checked
+            - 태그 안에 checked 속성이 있는 태그에게 스타일 적용
+
+            :enabled
+            - 태그 안에 enabled 속성있는 태그에게 스타일 적용
+
+            :diabled
+            - 태그 안에 disabled 속성이 있는 태그에게 스타일 적용
+            - 사용불가나 비활성화 기능이 있는 태그에게 사용 가능
+        */
+
+        /* 기본 색상 */
+        input + span {
+            color: black; /* input 태그의 형제 태그인 span 의 문자에 적용 */
+        }
+
+        /* 체크가 될 때 색 변경 */
+        input:checked + span {
+            color: red;
+        }
+
+        /* 체크박스 위에 마우스가 올라가면 색 변경 */
+        input:hover + span{
+            background-color: rosybrown;
+        }
+
+        /* 체크박스를 누르고 있으면 색 변경 */
+        input:active + span {
+            background-color: slateblue;
+        }
+
+        /* 체크박스가 비활성화일 때 적용 */
+        input:disabled + span {
+            background-color: brown;
+        }
+
+        input:checked + label {
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" name="test" id="id1"><span> 체크박스1</span>
+    <input type="checkbox" name="test" id="id2" checked><span> 체크박스2</span>
+    <input type="checkbox" name="test" id="id3"><span> 체크박스3</span>
+    <input type="checkbox" name="test" id="id4" disabled> <span> 체크박스4</span>
+
+    <hr>
+    <br>
+    <input type="radio" name="radio" id="r1" checked><label for="r1">라디오1</label>
+    <input type="radio" name="radio" id="r2"><label for="r2">라디오2</label>
+</body>
+</html>

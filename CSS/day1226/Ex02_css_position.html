@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex02_css_position</title>
+    <style>
+        /*
+            position : 위치를 선정하는 속성
+
+            1. 정적 위치 = position:static
+            - 모든 태그의 기본값
+            - 단순하게 웹페이지의 흐름대로 차례대로 요소를 배치하는 방식
+            - 위치를 설정하는 top, right, bottom, left 속성값에 영향받지 않음
+            - relative 요소의 위치가 변경되어 static 요소의 위치로 오더라도 위치 변경 없이 겹쳐짐
+
+            2. 상대 위치 = position:relative
+            - 태그의 정적 위치를 대상으로 위치를 재설정하는 방식
+            - top, right, bottom, left 속성값에 영향 받음(이하 동일)
+            - 상기한 값을 변경하여 위치를 바꿔도 본래 가지고 있던 위치값(정적 위치 기준)은 변하지 않음
+
+            3. 고정 위치 = position:fixed
+            - 위치를 항상 같은 곳에 고정시키는 방식
+            - 페이지의 크기가 변하더라도 항상 지정된 위치에 존재
+
+            4. 절대 위치 = position:absolute
+            - 자신의 상위태그의 위치에 따라 고정위치를 설정
+            - 상위 태그가 <body>면 해당 태그를 기준으로 위치를 설정
+            - 상위 태그는 static으로 설정되면 안 됨 (<body>같은 가장 최상위 태그는 static이여도 작동)
+
+            top, right, bottom, left는 각기 상우하좌 끝을 기준으로 하므로
+            top - bottom, right - left 끼리는 각각 양립할 수 없음
+        */
+        .rowline {
+            margin-top: 25px;
+        }
+
+        .static {
+            position:static;
+            border: 2px solid red;
+            margin-bottom: 5px;
+        }
+
+        .relative {
+            position:relative;
+            border:2px solid blue;
+            margin-bottom: 5px;
+            top: 10px; /* 위에서 10px 떨어짐 */
+            left: 30px; /* 왼쪽에서 30px 떨어짐 */
+        }
+
+        .fixed {
+            position:fixed;
+            border:2px solid darkgreen;
+            top: 50%; /* 위에서부터 50% 위치한 곳에 고정 */
+            right: 0px; /* 오른쪽 끝에 붙은 채로 고정*/
+        }
+
+        .relative2{
+            border: 2px solid darkorange;
+            position: relative; /* 부모 태그의 위치 방식을 설정해야 하위 absolute가 작동 */
+            width: 500px /* 부모 태그의 크기를 바꾸면 하위 태그의 absolute도 기준이 이에 맞게 변형 */
+        }
+        .absolute {
+            border: 2px solid teal;
+            position: absolute;
+            top: 100px; /* 만약 px가 아닌 %를 쓰면 부모 태그 상단을 기준으로 해당 태그의 상단을 맞춤(bottom은 하단 기준) */
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1> 위치 지정 테스트 </h1>
+    <div class="static">이 요소는 정적위치(static) 입니다.</div>
+    <div class="relative">이 요소는 상대위치(relative) 입니다.</div>
+    <h4>상대위치는 html 요소의 정적위치를 대상으로 위치를 재조정하는 방식</h4>
+
+    <hr class="rowline">
+    <div class="fixed">이 요소는 고정위치입니다.</div> 
+    <h4>고정위치는 위치를 항상 같은 곳에 위치하는  방식</h4>
+
+    <hr class="rowline">
+    <div class="relative2">
+        상대위치를 설정한 태그는
+        <div class="absolute">
+            이 요소는 절대위치입니다1
+            상위태그(부모)요소에 따라 위치를 재조정하는 방식 ( 부모요소 = div )
+        </div>
+    </div>
+
+    <div class="absolute">
+        이 요소는 절대위치입니다2
+        상위태그(부모)요소에 따라 위치를 재조정하는 방식 ( 부모요소 = body )
+    </div>
+</body>
+</html>

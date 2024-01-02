@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex99_test</title>
+</head>
+<body>
+    <h1>제출 결과</h1>
+
+    <script>
+        // submit.html에서 넘겨준 이름을 저장하는 것을 javascript로 구현한다
+        var urlParam = new URL(location.href).searchParams;
+        var userid = urlParam.get('id');
+        document.write("ID : "+userid + "<br/>");
+        var password = urlParam.get('password');
+        document.write("Password : "+password + "<br/>");
+        document.write("회원등급 : 준회원 <br/>");
+        var name = urlParam.get('username');
+        document.write("이름 : "+name + "<br/>");
+        var mail = urlParam.get('mail');
+        document.write("이메일 : "+mail + "<br/>");
+        var telephone = urlParam.get('telephone');
+        document.write("연락처 : "+telephone + "<br/>");
+        var birthday = urlParam.get('birth');
+        document.write("연락처 : "+birthday + "<br/>");
+        var mastery = urlParam.get('mastery');
+        document.write("코딩 숙련도 : "+mastery + "<br/>");
+    </script>
+</body>
+</html>

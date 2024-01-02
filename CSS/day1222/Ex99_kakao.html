@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex99_kakao_answer</title>
+    <style>
+        #main {
+            /*border: 1px solid black;*/
+            width: 600px;
+            margin:auto;
+            padding:10px;
+        }
+
+        #top {
+            /*border: 1px solid green;*/
+            margin-bottom: 10px;
+        }
+
+        #middle {
+            border: 1px solid green;
+            margin-bottom: 10px;
+            padding: 50px 20px;
+        }
+
+        /*#bottom {
+            border: 1px solid green;
+        }*/
+
+        h1 {
+            text-align: center;
+        }
+        
+        #inputdiv {
+            /*border: 1px solid blue;*/
+            width: 350px;
+            margin: auto;
+            margin-bottom: 100px;
+        }
+        #buttondiv {
+            /*border: 1px solid blue;*/
+            width: 350px;
+            margin: auto;
+            margin-bottom:10px;
+        }
+
+        .inputtag {
+            width: 350px;
+            padding: 0px;
+            border-top: 0px;
+            border-left: 0px;
+            border-right: 0px;
+            border-bottom: 2px solid rgb(148, 148, 148);
+            height: 50px;
+            outline: none;
+            font-size: large;
+        }
+        .inputtag::placeholder {
+            font-size: large;
+        }
+
+        #loginbtn {
+            background-color: #FEE500;
+            width:350px;
+            padding:15px;
+            font-size:18px;
+            border: 0px;
+            border-radius: 5px;
+        }
+
+        #qrbtn {
+            background-color: rgb(161, 161, 161);
+            color: rgb(20, 20, 20);
+            width: 310px;
+            padding: 20px; 
+            font-size: 18px;
+            letter-spacing: 1px;
+            border-radius: 5px;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        /* 양쪽 직선 사이에 글자 넣는 법 */
+        .hr-sect {
+            display: flex;
+            flex-basis: 100%;
+            align-items: center;
+            color: rgba(0, 0, 0, 0.35);
+            font-size: 12px;
+            margin: 8px 0px;
+        }
+        .hr-sect::before,
+        .hr-sect::after {
+            content: "";
+            flex-grow: 1;
+            background: rgba(0, 0, 0, 0.35);
+            height: 1px;
+            font-size: 0px;
+            line-height: 0px;
+            margin: 0px 16px; /* 마진으로 선의 길이를 조절 */
+        }
+
+        #joindiv {
+            /*border: 1px solid blue;*/
+            width: 350px;
+            margin:auto;
+        }
+        .jointag {
+            text-decoration: none;
+            color: black;
+            font-size: 12px;
+        }
+
+        .pad100 {
+            margin-left: 158px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main"> <!--큰 메인 박스를 만들고 각 구역을 나눠서 만드는 것이 유리-->
+        <div id="top">
+            <h1>kakao</h1>
+        </div>
+        <div id="middle">
+            <div id="inputdiv">
+                <input type="text" class="inputtag" placeholder="카카오메일 아이디, 이메일, 전화번호">
+                <br>
+                <input type="password" class="inputtag" placeholder="비밀번호">
+            </div>
+
+            <div id="buttondiv">
+                <button type="button" id="loginbtn">로그인</button>
+                <div class="hr-sect">또는</div>
+                <a href="#" id="qrbtn">QR코드 로그인</a>
+            </div>
+            <div id="joindiv">
+                <a href="#" class="jointag">회원가입</a>
+                <a href="#" class="jointag pad100">계정 찾기</a>
+                <a href="#" class="jointag">비밀번호 찾기</a>
+            </div>            
+        </div>
+        <div id="bottom">
+            1
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex02_active</title>
+</head>
+<body>
+    <!--
+        HTML은 구조를 만들기도 하지만 기능이 자주 사용될 경우 태그화 한 언어
+
+        CSS : 꾸밈 언어
+
+        JavaScript : 웹페이지상에서 발생하는 이벤트(사건) 정의
+                    사건이 발생하면 기능을 작동시키는 언어
+    -->
+
+    <!-- HTML 태그 중에서 자바스크립트와 비슷한 기능이 포함된 태그가 존재-->
+    <!--
+        링크 태그 <a> : 현재 웹페이지에서 다른 페이지나 사이트로 연결하는 태그 (anchor)
+
+        href : 이동할 주소를 작성하는 속성. <a> 태그에는 필수로 요구
+
+        target : 링크로 연결된 페이지를 보여줄 방법
+        target="_blank" : 새탭 오픈
+        target="_self" : 내 프레임에서 오픈 * 기본값
+    -->
+    <a href="이동할 정보">HTML 설명</a><br>
+    <a href="https://www.naver.com">네이버 이동</a><br>
+
+    <a href="https://www.google.com">구글이동</a><br>
+    <a href="https://www.daum.net" target="_blank">다음이동</a><br>
+
+    <!--href="#" : 이동 경로 없이 그냥 클릭만 가능한 상태로 만들기 (클릭 이벤트가 필요할 때 편법으로 사용 가능)-->
+    <a href="#">클릭이벤트</a><br>
+    
+    <!--
+        img : 이미지 태그 (빈태그라 시작 태그만 필요)
+
+        img의 필수 속성은 2가지
+        src : 이미지 주소 작성 (불러올 사진의 주소)
+        alt : 이미지를 불러올 때 실패할 경우 대체할 문자열(스트링) ex)시각장애인에게 사진을 읽어줄 때 등
+        title : 이미지에 커서를 올릴 때 나오는 설명
+    -->
+    <img src="test.jpg" alt="이미지가 없습니다." title="이미지의 설명입니다."/><br>
+    <img src="https://img1.daumcdn.net/thumb/S308x188a.q80/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fsection%2Foc%2Fa53b64da78964331a07850b11de29f01" alt="이미지가 없습니다." title="못 말리는 짱구"/><br>
+    <!-- 이미지에 링크 걸기 -->
+    <a href="https://www.daum.net" target="_blank"><img src="https://img1.daumcdn.net/thumb/S308x188a.q80/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fsection%2Foc%2Fa53b64da78964331a07850b11de29f01" alt="이미지가 없습니다." title="짱구를 누르면 다음이 나옵니다"/></a><br>
+</body>
+</html>

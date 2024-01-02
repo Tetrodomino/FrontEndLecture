@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex03_css_menu</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        h1 {
+            font-size: 150%;
+            font-weight: bolder;
+        }
+
+        .div1 ul {
+            background-color: wheat;
+            width:max-content;
+        }
+
+        .div1 ul li a  {
+            text-decoration: none;
+            font-weight: bolder;
+            color: black;
+            padding: 10px;
+            display: block; /* a 태그는 inline 이므로 padding을 적용하려면 block으로 변경필요 */
+        }
+
+        /* a 태그 중 home class가 있는 것을 제외하고 적용 */
+        .div1 ul li a:not(.home):hover {
+            background-color: burlywood;
+            color: white;
+        }
+
+        .div1 li a.home {
+            background-color: coral;
+            color: white; 
+        }
+
+        .div2 li a.home {
+            background-color: coral;
+            color: white; 
+        }
+
+        .div2 ul {
+            margin: 0;
+            padding: 0;
+            background-color: wheat;
+            overflow: hidden; /* float로 인해 데이터가 넘쳤을 때 넘친 부분까지 영역 확장시킬 때 */
+        }
+
+        .div2 ul li a {
+            text-decoration: none;
+            font-weight: bolder;
+            color: black;
+            padding: 10px;
+            display: block;
+            width: 70px;
+            text-align: center;
+        }
+
+        .div2 li {
+            float: left;
+            background-color: wheat;
+        }
+
+        .div2 ul li a:not(.home):hover {
+            background-color: burlywood;
+            color: white;
+        }
+
+        .div2 ul > ul {
+            float: right;
+        }
+
+        /* 평상시에는 뉴스의 드롭다운 항목이 보이지 않게 처리 */
+        .dropdown-div,
+        .dropdown-div2,
+        .dropdown-div3,
+        .dropdown-div4 {
+            display: none;
+            width: 90px;
+            position: absolute;
+            background-color: wheat;
+        }
+
+        /* 마우스를 올려두면 드롭다운 항목 표시 */
+        .dropdown:hover .dropdown-div,
+        .dropdown2:hover .dropdown-div2,
+        .dropdown3:hover .dropdown-div3,
+        .dropdown4:hover .dropdown-div4 {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1> li 와 a 태그를  사용하여 만드는 리스트 메뉴</h1>
+    <div class="div1">
+        <ul>
+            <li><a href="#" class="home">HOME</a></li>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">마이페이지</a></li>
+            <li><a href="#">사이트맵</a></li>
+        </ul>
+    </div>
+    <br>
+
+    <div class="div2">
+        <ul>
+            <li><a href="#" class="home">HOME</a></li>
+            <li>
+                <div class="dropdown"><a href="#">뉴스</a> 
+                    <div class="dropdown-div">
+                        <a href="#">A일보</a>
+                        <a href="#">B일보</a>
+                        <a href="#">C일보</a>
+                    </div>
+                </div>                   
+            </li>
+            <li>
+                <div class="dropdown2"><a href="#">웹툰</a> 
+                    <div class="dropdown-div2">
+                        <a href="#">액션</a>
+                        <a href="#">개그</a>
+                        <a href="#">스릴러</a>
+                        <a href="#">판타지</a>
+                    </div>
+                </div> 
+            </li>
+            <li>
+                <div class="dropdown3"><a href="#">부동산</a> 
+                    <div class="dropdown-div3">
+                        <a href="#">서울</a>
+                        <a href="#">경기</a>
+                        <a href="#">인천</a>
+                        <a href="#">강원</a>
+                    </div>
+                </div> 
+            </li>
+            <li>
+                <div class="dropdown4"><a href="#">쇼핑</a> 
+                    <div class="dropdown-div4">
+                        <a href="#">할인상품</a>
+                        <a href="#">가전</a>
+                        <a href="#">식품</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="#">날씨</a></li>
+            
+            <ul>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+            </ul>
+        </ul>
+    </div>
+
+    
+</body>
+</html>

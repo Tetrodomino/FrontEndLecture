@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex05_css_style</title>
+    <style>
+        div {
+            color: red;
+        }
+
+        .color1 {
+            color: rgb(0, 130, 255); /* RGB 색상값을 이용해 색 넣기 */
+        }
+
+        .color2 {
+            color: #00FF33; /* 16진수 RGB 색상값을 이용해 색 넣기 */
+        }
+
+        .color3 {
+            background-color: lightblue; /* 배경색 바꾸기 */
+        }
+
+        .color4 {
+            background-image: url(test.jpg); /* 배경 이미지 넣기(url 필수) */
+            background-repeat: no-repeat; /* 이미지 반복 설정 */
+            background-position: center; /* 이미지 위치 설정 */
+            height: 220px; /* 이미지 높이 조절 */
+        }
+
+        .color5 {
+            direction: rtl; /*ltr : left to right, rtl : right to left*/
+            letter-spacing: 10px; /* 글자 간격 설정 */
+            word-spacing: 20px; /* 단어 간격 설정 */
+        }
+
+        .color6 {
+            text-indent: 30px; /* 문장 들여쓰기 */
+            text-align: center; /* 문장 정렬, 위의 direction보다 우선 적용 */
+            /*
+            그림자 설정
+            3px는 원래 문자와의 가로 거리
+            2px는 원래 문자와의 세로 거리
+            색상은 그림자의 색
+            */
+            text-shadow: 3px 2px lightcoral;
+        }
+
+        .color7 {
+            text-decoration: line-through; /* 텍스트 꾸미기 (line through는 취소선)*/
+        }
+
+        a {
+            text-decoration: none; /* 밑줄이나 취소선 같은 선 제거 */
+            color: rgb(0, 0, 0);
+        }
+
+        p {
+            font-family: 'Times New Roman', Times, serif; /* 글꼴 설정 */
+        }
+
+        #font1 {
+            font-family: Gungsuh;
+            font-style: italic; /* 폰트 기울임 */
+            font-variant: small-caps; /* 폰트 축약형 */
+        }
+
+        #font2 {
+            font-weight: bolder; /* 글자 두께 */
+            font-size: 200%; /* 글자 크기 (%와 px 모두 가능)*/
+            /*
+            px : 화면의 픽셀을 기준으로 함 (절대크기)
+            em : 글꼴의 대문자 M을 기준으로 한 상대크기 - 절대크기로 할 때 해상도에 따라 차이가 나는 것을 해소하기 위함
+            % : 기본 글꼴 크기(16px) 기준으로 크기 설정
+            */
+        }
+
+        #font3 {
+            font-size: 32px;
+        }
+
+        #font4 {
+            font-size: 2em; /*200%, 32px랑 비슷한 크기*/
+        }
+    </style>
+</head>
+<body>
+    <div class="color1"> 색상 테스트 </div>
+    <div class="color2"> 색상 테스트 </div>
+    <div class="color3"> 색상 테스트 </div>
+    <div class="color4"> 색상 테스트 </div>
+    <div class="color5"> 색상 테스트 </div>
+    <div class="color6"> 색상 테스트 </div>
+    <div class="color7"> 색상 테스트 </div>
+
+    <a href="#">이곳은 링크를 위한 태그입니다.</a>
+    <div>Font Testing...! 폰트테스트</div>
+    <p id="font1">Font Testing...! 폰트테스트 </p>
+    <p id="font2">Font Testing...! 폰트테스트 </p>
+    <p id="font3">Font Testing...! 폰트테스트 </p>
+    <p id="font4">Font Testing...! 폰트테스트 </p>
+    <p id="font5">Font Testing...! 폰트테스트 </p>
+</body>
+</html>

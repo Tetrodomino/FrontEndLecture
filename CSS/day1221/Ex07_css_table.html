@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex07_css_table</title>
+    <style>
+        /* ol과 ul에 모두 적용 */
+        ol, ul {
+            list-style-type: none; /* 항목을 표시하는 점이나 숫자 제거 */
+            border: 1px solid black; /* 1px 크기의 테두리 추가 */
+
+            background-color: darkseagreen;
+
+            /* ol과 ul은 디자인상 들여쓰기가 기본값 (padding이 좌측 방향에서만 존재) */
+            padding: 0px; /* 들여쓰기 제거 */
+        }
+
+        li {
+            border: 1px solid red; /* 리스트의 각 항목에 대해 테두리 추가*/
+        }
+
+        table {
+            border: 1px solid black; /* 가장 큰 테두리 하나만 생성 */
+            border-collapse: separate; /* 각 칸의 테두리를 분리시킴 (일치시키려면 collpase 사용) */
+            border-spacing: 20px 30px;
+            width:200px; /* 테이블 전체의 가로 크기를 지정 (%일 경우 페이지의 가로 크기 비례) */
+            height: 400px; /* 테이블 전체의 세로 크기 지정 */
+        }
+
+        tr {
+            border: 1px solid red; /* tr은 명시적인 영역이 없어 테두리를 추가해도 보이지 않음 */
+        }
+
+        td {
+            border: 1px solid blue; /* 각 칸에 파란색 테두리 추가 */
+            text-align: center; /* 텍스트 수평 중앙정렬 */
+            vertical-align: bottom; /* 텍스트 수직 하단정렬*/
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>사과</li>
+        <li>딸기</li>
+        <li>바나나</li>
+        <li>수박</li>
+    </ol>
+    
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    
+    <table>
+        <tr>
+            <td>100</td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td>300</td>
+            <td>400</td>
+        </tr>
+    </table>
+        
+</body>
+</html>

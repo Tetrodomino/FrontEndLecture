@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex01_display</title>
+</head>
+<body>
+    <!--
+        모든 태그는 박스형 형태로 구성 (F12를 눌러 개발자 모드로 확인 가능)
+        또한 display라는 스타일 속성이 존재
+        
+        display : 어떻게 보일 것인가를 정하는 속성
+            - inline과 block이 존재
+        
+        block에 해당되는 태그 - <div>, <p>, <h>, <ol>, <ul>, <form> 등
+        
+        * block의 특징
+        - 해당 라인의 모든 너비를 차지
+        - 해당 태그를 감싼 태그의 너비와 동일 (body 안에 있으면 body의 너비와 동일)
+        - block 태그랑 block의 다음 태그는 언제나 새로운 라인에서 시작(br을 쓰지 않아도 줄바꿈이 됨)
+    -->
+    <p style="background-color: grey; color: orange;"> p 태그는 display 속성값이 block 입니다.1</p>
+    <p> p 태그는 display 속성값이 block 입니다.2</p> <!--새로운 줄에서 시작-->
+    <a href="#">inline 태그</a> <!--block의 다음 inline 태그도 줄바꿈-->
+
+    <br><hr><br>
+    <!--
+        inline에 해당되는 태그 : <span>, <a>, <b>, <img>, <i> 등
+        
+        * inline의 특징
+        - 해당 HTML 요소의 "내용"만큼의 너비를 차지
+        - 새로운 라인에서 시작하지 않음
+    -->
+    <a href="#">a 태그는 display 속성값이 inline 입니다.1</a>
+    <a href="#">a 태그는 display 속성값이 inline 입니다.2</a> <!--가로 길이가 충분하면 줄바꿈이 없음-->
+    <span style="border: 3px solid red;">span 태그는 display 속성이 inline 입니다.3</span>
+
+    <br><hr><br>
+    <!-- div : block 태그면서 HTML 태그를 여러개 묶을 때 사용하는 태그 -->
+    <div style="background-color: goldenrod; color: green; width: 500px"> <!--하위 태그에도 style이 적용-->
+        <h1>블록 태그 연습</h1>
+        <p>여러 요소들을 div로 묶어서 표현</p>
+    </div>
+
+    <br><hr><br>
+    <!-- block 와 inline 장점을 같이 사용할수있는 속성
+        display : inline-block
+        block : 높이와 너비를 지정 / inline : 불가
+        block : 무조건 새로운 라인 / inline : 너비에 맞춰서 라인 생성
+
+        inline-block : 높이와 너비를 지정하면서 너비에 맞춰서 라인 생성
+    -->
+    <div style="background-color: goldenrod; color: green; width: 500px; display : inline-block;"> <!-- inline을 빼면 width가 적용되지 않음 -->
+        <h1>블록 태그 연습 블록 태그 연습 블록 태그 연습 블록 태그 연습 </h1>
+        <p>여러 요소들을 div로 묶어서 표현</p>
+    </div>
+
+    <div style="background-color: goldenrod; color: red; width: 500px; display : inline-block;">
+        <h1>블록 태그 연습</h1>
+        <p>여러 요소들을 div로 묶어서 표현</p>
+    </div>
+    <!--가로 길이가 1000 이상으로 충분하면 두 div가 한 줄에 표현됨-->
+    
+    <br><hr><br>
+    <!--
+        태그가 2개 있다 했을 때
+
+        inline 태그만 2개가 있으면 가로로 2개가 붙는다
+        block 태그만 2개가 있으면 세로로 2개가 붙는다
+        inline + block 일 경우 세로로 2개가 붙는다 (block + inline 포함)
+
+        inline + inline-block 일 경우 가로 길이가 충분하면 가로로 2개가 붙는다
+        block + inline-block 일 경우 세로로 2개가 붙는다
+    -->
+    <a href="#">a 태그는 display 속성값이 inline 입니다.1</a>
+    <p>여러 요소들을 div로 묶어서 표현</p> <!--block은 무조건 가로 최대치므로 줄바꿈-->
+</body>
+</html>

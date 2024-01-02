@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex06_css_A</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        #blue {
+            background-color: rgb(0, 136, 254);
+            color: white;
+            width: 150px;
+            height: 50px;
+            padding: 10px 25px; /* 배경이 차지하는 공간 중 텍스트가 차지하는 공간을 뺀 여백의 크기 (가로, 세로) */
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        #dark {
+            background-color: rgb(73, 78, 86);
+            color: white;
+            width: 150px;
+            height: 50px;
+            padding: 10px 25px; 
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-radius: 10px; /* 꼭지점의 굴곡(높을수록 꼭지점 부분이 더 크게 뭉특해짐) */
+        }
+
+        /*
+            a 태그의 link는 5가지 상태가 존재 
+
+            :link - 1번도 접속하지 않은 기본 상태
+            :visited - 1번이라도 링크를 방문한 상태
+            :hover - 마우스가 링크 위에 올라간 상태
+            :active - 마우스가 링크를 클릭하고 있는 상태
+            :focus - 키보드나 마우스가 이벤트 또는 다른 형태로 태그의 포커스가 되어있을 때
+
+            :(콜론)은 태그의 상태를 선택자로 쓸 때 사용
+            따라서 아래와 같은 방식으로 링크의 각 상태 색상 등을 지정 가능
+        */
+
+        a#test:link { /*link 상태를 선택자로 지정 */
+            color: olive;
+        }
+        a#test:visited {
+            color: red;
+        }
+        a#test:hover {
+            color: coral;
+            text-decoration: underline; /* hover 상태에서 밑줄을 그음 */
+        }
+        a#test:active {
+            color:khaki;
+            text-decoration: overline; /* active 상태에서 윗줄을 그음 */
+        }
+
+        #exam:link {
+            background-color: rgb(0, 136, 254);
+            color: white;
+            width: 150px;
+            height: 50px;
+            padding: 10px 25px;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        #exam:visited {
+            background-color: rgb(0, 136, 254);
+            color: white;
+            width: 150px;
+            height: 50px;
+            padding: 10px 25px;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        #exam:hover {
+            background-color: rgb(73, 78, 86);
+            color: white;
+            width: 150px;
+            height: 50px;
+            padding: 10px 25px; 
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-radius: 10px;
+        }
+        #exam:active {
+            background-color: rgb(73, 78, 86);
+            color: white;
+            width: 150px;
+            height: 50px;
+            padding: 10px 25px; 
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <a id="normal" href="#"> 링크 버튼 1 </a><br><br>
+    <a id="blue" href="#"> 링크 버튼 2 </a><br><br>
+    <a id="dark" href="#"> 링크 버튼 3 </a><br>
+    <br><br>
+    <a id="test" href="#5"> 버튼 연습 </a> 
+    <br><br><br>
+    <a id="exam" href="#3"> 링크 버튼 </a>
+</body>
+</html>

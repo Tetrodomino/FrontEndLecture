@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex04_input</title>
+</head>
+<body>
+    <!--
+        input : 사용자가 값을 입력할 수 있도록 도와주는 태그 (빈 태그)
+
+        type : 입력의 종류를 정하는 필수 속성
+        - text : 기본값
+    -->
+
+    이름 : <input/> <br> <!-- type 값을 넣지 않아 type 속성이 디폴트인 text로 적용-->
+    별명 : <input type="text"/> <br>
+    비밀번호 : <input type="password"> <br>
+    <hr>
+
+    <!--
+        checkbox : 다중 항목을 다중 선택할 때 사용하는 type 속성값
+        radio : 다중 항목 중 단일 선택할 때 사용하는 type 속성값
+    -->
+
+    <input type="checkbox"> <br>
+    <input type="radio"> <br>
+    <hr>
+    
+    <!--
+        name : radio type을 사용할 때 같은 그룹(radio 끼리 중복 선택 불가)을 묶을 때 사용하는 속성
+        사용하지 않으면 별개의 라디오가 되기에 모두 선택이 가능해짐
+    -->
+    성별 : <input type="radio" name="gender"> 남성
+    <input type="radio" name="gender"> 여성
+    <br>
+
+    체크 : <input type="checkbox" name="chk"> 체크 1
+    <input type="checkbox" name="chk"> 체크 2 <!-- checkbox는 name으로 묶더라도 중복 선택이 가능-->
+
+    <hr>
+    <!--
+        label : input 태그와 문자를 연결해주는 태그
+
+        * 연결 방법
+        <input id="">
+        <label for=""> </label>
+        input 태그의 id 속성값과 label 태그의 for 속성값이 동일하면 연결
+        사용할 경우 input에서 사용되었던  check, radio 등을 클릭하는 것 뿐만이 아닌
+        label 에 쓰인 text를 눌러도 작동
+
+        * id의 속성값은 태그별로 유일한 값으로 작성하는 것을 권장
+    -->
+
+    성별 : <input type="radio" name="gender" id="gender1"> <label for="gender1">남성</label>
+    <input type="radio" name="gender" id="gender2"> <label for="gender2">여성</label>
+    <!--
+        id값이 중복될 경우 가장 먼저 작성된 id값만 적용되고
+        for 값이 중복되면 모든 같은 for값을 가진 label 아무거나 눌러도 연결된 id가 적용
+    -->
+    <br>
+    <hr>
+
+    <!-- 색상 선택(RGB 선택 가능) -->
+    <input type="color"><br> 
+
+    <!--
+        날짜 선택
+        value로 초기값 지정 가능
+        min, max로 최솟값, 최댓값 지정 가능
+    -->
+    <input type="date" value="2023-12-19" min="2023-12-01" max="2023-12-31"><br>
+
+    <!--
+        범위 선택
+        value로 초기값 지정 가능
+        min, max로 최솟값, 최댓값 지정 가능
+        step으로 최소단위 조절 가능
+    -->
+    <input type="range" value="10" max="20" min="0" step="2"> <br>
+
+    <!--
+        숫자 선택
+        value로 초기값 지정 가능
+        min, max로 최솟값, 최댓값 지정 가능
+        step으로 최소단위 조절 가능
+    -->
+    <input type="number" value="0" max="60000" min="0" step="10"> <br>
+
+    <!--
+        입력창 안에 어떤 값을 입력할지 안내 가능한 속성 placeholder
+    -->
+    <input type="text" placeholder="아이디를 입력해 주세요"> <br>
+
+    <!--
+        창을 새로고침해도 커서 위치가 바뀌지 않는 autofocus
+    -->
+    <input type="text" autofocus> <br>
+    <hr>
+    <!-- 미리 체크된 상태로 보여주는 속성 checked-->
+    <input type="checkbox" checked> <input type="radio"> <br>
+    <input type="checkbox"> <input type="radio" checked> <br>
+
+    <!-- 핸드폰 번호를 입력받을 때 사용하는 input -->
+    정규식(핸드폰)* : <input type="text" pattern="(010|011)-\d{3,4}-\d{4}"><br/> <!-- 현재 patern은 기능 미구현-->
+
+    <!--버튼을 표현하는 방식 2가지-->
+    <button>버튼1</button>
+    <input type="button" value="버튼2"> <!--value의 값이 버튼에 적힘-->
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex99_example</title>
+</head>
+<body>
+    <form id="myform" action="#">
+        <fieldset> <!-- 입력값을 감싸는 태그 -->
+            <legend>회원 가입</legend>
+            <ol>
+                <li>이름 <input type="text" placeholder="이름"></li>
+
+                <li> 성별 <input type="radio" name="gender" id="gender1"> <label for="gender1">남성</label>
+                <input type="radio" name="gender" id="gender2"> <label for="gender2">여성</label></li>
+                
+                <!--
+                    select : 여러 항목 중에 하나를 선택하는 태그 (드롭다운 방식)
+                    option : select 내의 각 항목을 표현하는 태그
+
+                    select multiple : 드롭다운이 아닌 다중 선택 리스트
+                    마찬가지로 각 항목은 option 사용
+                -->
+                <li> 직업 <select>
+                    <option value="프로그래머" selected>프로그래머</option> <!--초기 선택 옵션 selected-->
+                    <option value="학생">학생</option>
+                    <option value="선생">선생</option>
+                </select></li>
+
+                <!-- 이미 체크된 상태를 만들 때는 checked -->
+                <li> 취미 <input type="checkbox" id="v1" checked> <label for="v1">잠자기</label>
+                <input type="checkbox" id="v2"> <label for="v2">먹기</label>
+                <input type="checkbox" id="v3"> <label for="v3">숨쉬기</label>
+                <input type="checkbox" id="v4"> <label for="v4">멍때리기</label></li>
+
+                <li> 애인 <input type="radio" name="love" id="love1"> <label for="love1">있다</label>
+                <input type="radio" name="love" id="love2"> <label for="love2">없다</label></li>
+
+                <li> <input type="submit" value="확인">
+                <button type="reset">취소</button></li>
+
+                <!--
+                    큰 입력창을 만드는 textarea 태그
+                    시작 태그와 종료 태그 사이에 문자가 입력되므로 종료 태그를 시작 태그에 붙여서 사용
+
+                    cols : 가로로 글자가 얼마나 길게 들어갈지 (가로길이)
+                    rows : 세로로 글자가 얼마나 길게 들어갈지 (세로길이)
+                -->
+                <li> <textarea id="special" cols="30" rows="5"></textarea></li>
+
+                <!-- 값 입력을 요구하는 required-->
+                <li> 빈값 : <input type="text" required></li>
+
+                <!--
+                    사이즈를 변경하는 2가지 방법
+                    1. style="width: 길이;"
+                    2. size="길이"
+                    (둘이 단위 다름)
+                -->
+                <li> 사이즈 : <input type="text" style="width: 700px;"></li>
+
+                <!--초기값을 지정하는 value-->
+                <li> 초기값 : <input type="text" value="초기값"></li>
+
+                <!--값 변경을 못하게 하는 readonly-->
+                <li> 초기값 변경x : <input type="text" value="초기값" readonly></li>
+
+                <!--text의 최대 길이를 지정하는 maxlength-->
+                <li> 입력 한계 : <input type="text" maxlength="5"></li>
+
+                <!--입력창을 비활성화시키는 disabled-->
+                <li> 미사용 : <input type="text" disabled></li>
+            </ol>
+        </fieldset>
+    </form>
+</body>
+</html>

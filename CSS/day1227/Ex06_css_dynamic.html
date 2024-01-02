@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex06_css_dynamic</title>
+    <style>
+        /* 동적 가상(의사) 클래스 */
+
+        /* 기본색 */
+        a {
+            color: black;
+        }
+
+        /* link : 링크가 한 번도 눌리지 않았을 때의 상태 */
+        a:link {
+            color: red;
+        }
+
+        /* visited : 링크가 한 번이라도 눌렸을 때의 상태 */
+        a:visited {
+            color: royalblue;
+        }
+
+        /* hover : 마우스가 해당 태그(a) 위로 올라와 있을 때 */
+        a:hover {
+            border-bottom: 2px solid blue;
+        }
+
+        /* active : 마우스가 해당 태그를 누르고 있을 때 */
+        a:active {
+            background-color: springgreen;
+        }
+
+        input:hover {
+            border: 1px solid orange;
+        }
+
+        /* focus : 입력 중일 때 */
+        input:focus {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <a href="#1">
+        동적 의사 클래스 연습
+    </a>
+    <br>
+    <a href="#2">
+        동적 의사 클래스 연습
+    </a>
+    <br>
+    <a href="#3">
+        동적 의사 클래스 연습
+    </a>
+    <br>
+    <a href="#4">
+        동적 의사 클래스 연습
+    </a>    
+
+    <br><br>
+    <input type="text" value="test중입니다."/>
+</body>
+</html>

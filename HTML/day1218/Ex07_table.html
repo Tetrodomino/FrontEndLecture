@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex07_table.html</title>
+</head>
+<body>
+    <!--
+        <table></table> : 테이블을 구성하기 위한 가장 큰 범위의 태그
+        <tr></tr> : 가로줄을 만드는 태그 (표의 가로줄을 생성)
+        <td></td> : 셀(칸)을 만드는 태그 (가로줄 내의 칸 생성)
+
+        * <th></th> : 표의 제목을 만드는 태그 (<td> 대신 사용)
+        
+        td의 기본값 : 보통글씨, 왼쪽 정렬
+        th의 기본값 : 굵은글씨, 가운데 정렬
+        * thead / tbody
+
+        td가 tr 안에 있지 않아도 칸 자체는 만들어지나 위치를 정하기 어려울 수 있음
+    -->
+
+    <!-- border="1" : 테이블의 윤곽선 두께 (현재는 잘 사용하지 않음)-->
+    <table border="1">
+        <tr>
+            <th>12345</th> <!-- 볼드체+가운데 정렬-->
+            <td>23456</td>
+        </tr>
+        <tr>
+            <td>34567890</td>
+            <td>44567890</td>
+        </tr>
+    </table>    <!-- 2x2 크기 표 생성 -->
+
+    <!-- 실습 -->
+    <hr>
+    <table border="1">
+        <tr>
+            <th>언어</th>
+            <th>난이도</th>
+            <th>학습기간</th>
+        </tr>
+        <tr>
+            <td>HTML</td>
+            <td>하</td>
+            <td>1주</td>
+        </tr>
+        <tr>
+            <td>CSS</td>
+            <td>중</td>
+            <td>1주</td>
+        </tr>
+        <tr>
+            <td>javascript</td>
+            <td>상</td>
+            <td>2주</td>
+        </tr>
+    </table> <!-- 3 × 4 표 생성 -->
+
+    <!--
+        단축키 정리
+
+        shift + alt + ↑↓ = 해당 줄 복사
+        alt + ↑↓ = 해당 줄 위아래로 이동
+        tab = 들여쓰기
+        shift tab = 들여쓰는 거 지우기 (드래그 해서 여러 줄에 한꺼번에 실행 가능)
+        ctrl + / = 해당 부분 주석 만들기
+        shift + home = 커서 기준 앞으로 드래그
+        shift + end = 커서 기준 뒤로 드래그
+    -->
+
+    <hr>
+    <!-- 테이블 병합 -->
+    <!--
+        colspan : 열 합치기, "가로열" 병합
+        rowspan : 행 합치기, "세로행" 병합
+    -->
+
+    <table border="1">
+        <tr>
+            <td colspan="2">1</td> <!-- 가로열 2개 분량이 1개로 병합-->
+        </tr>
+        <tr>
+            <td>3</td> <!-- 2개 분량의 가로가 있어야 병합이 제대로 표현됨-->
+            <td>4</td>
+        </tr>
+    </table>
+    <table border="1">
+        <tr>
+            <td rowspan="2">1</td> <!-- 세로행 2개 분량이 1개로 병합-->
+            <td>2</td> <!-- 2개 분량의 세로가 있어야 병합이 제대로 표현됨-->
+        </tr>
+        <tr>
+            <td>4</td>
+        </tr>
+    </table>
+</body>
+</html>

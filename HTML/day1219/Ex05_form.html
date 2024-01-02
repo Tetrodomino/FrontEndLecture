@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex05_form</title>
+</head>
+<body>
+    <!--
+        form 태그
+        : input 태그를 이용하여 사용자에게 입력받은 값을 서버로 데이터를 전달하도록 하는 포장 태그
+
+        필수 속성 - method, action
+        method : 서버와의 통신 약속을 정하는 속성
+        action : 전송할 때 이동하는 페이지명(a 태그의 href와 같은 기능)
+
+        입력이 끝났고, 전달하겠다는 사건이 필요
+        → 이벤트를 만들기 위해 대개 버튼 태그 사용
+
+        form 태그의 입력값과 버튼의 이벤트를 만들어서 서버에게 전달, 데이터를 전송
+        데이터를 전송하는 기능을 submit이라 함
+        input type="submit" : form 태그의 데이터를 서버로 전송하는 기능을 가진 버튼
+    -->
+
+    <!-- form 태그를 사용하지 않고 만든 것 -->
+    No Form : <input type="text" placeholder="아이디.."> <br>
+    <input type="button" value="일반버튼">
+    <input type="submit" value="제출버튼">
+    <input type="reset" value="초기화버튼">
+    <hr><br> <!-- form 태그를 사용하지 않아 버튼을 눌러도 무반응 -->
+
+    <!-- form 태그 사용 -->
+    <form id="myform" action="#">
+        Form :  <input type="text" placeholder="아이디.."> <br>
+        메일 1 : <input type="text" id="email"><br>
+        메일 2 : <input type="email"><br> <!-- form 태그 안에 있을 때는 입력받은 값이 email 형식에 맞는지 검사-->
+        정규식(핸드폰)* : <input type="text" pattern="(010|011)-\d{3,4}-\d{4}"><br/>
+        <!--form 안에서 pattern을 넣었기 때문에 작동
+        (010 or 011)- (숫자 3자리~4자리) - (숫자 4자리)의 형식을 맞춰야 제출 가능-->
+        <input type="button" value="일반버튼" id="btn">
+        <input type="submit" value="제출버튼"> <!-- aciton의 링크에 데이터 input값 전송 -->
+        <input type="reset" value="초기화버튼">
+    </form>
+
+    <!-- script 태그 : 해당 시작태그와 종료태그 사이은 javascript가 작성되는 공간-->
+    <script>
+        // 자바스크립트 구현 공간
+        document.querySelector("#btn").addEventListener("click",function(){
+            alert('안녕하세요'); //입력 버튼을 눌렀을 때 해당 안내문 출력
+        })
+    </script>
+
+    <script>
+        // 자바스크립트
+        document.querySelector("#myform").addEventListener("submit", function(e){ 
+
+        var email = document.querySelector("#email");
+        var isValidate = false;
+        var regexp =/[a-z]+[a-z0-9]*\.?[a-z0-9]*@[a-z0-9]+\.?[a-z0-9]*/i; //입력 형식 지정
+
+        if(!regexp.test(email.value)){
+            alert("이메일 형식이 다릅니다."); //입력 형식을 벗어나면 해당 안내문 출력 
+        }
+
+        });
+    </script>
+</body>
+</html>

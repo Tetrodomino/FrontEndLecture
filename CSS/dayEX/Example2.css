@@ -1,0 +1,16 @@
+#container {
+    width: 600px;
+    margin: 20px auto;
+}
+
+.header {
+    display: inline-block;
+    background-color: #0404aa;
+    color: #fff;
+    font-size: 30px;
+}
+
+boldtext {
+    font-weight: bold;
+    color: red;
+}

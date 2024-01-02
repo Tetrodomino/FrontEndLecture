@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex99_11st</title>
+    <style>
+        body {
+            width: 600px;
+            margin:auto;
+            padding: 20px;
+        }
+
+        section {
+            border: 1px solid #e2e2e2;
+            width: 440px;
+            margin:auto;
+            margin-top: 100px;
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        #header {
+            width: 80px;
+            margin:auto;
+            margin-top: 30px;
+            margin-bottom: 35px;
+        }
+        #inputsection {
+            width:400px;
+            margin:auto;
+            position: relative;
+        }
+        .inp {
+            border: 1px solid #c0c0c0;
+            width: 370px;
+            outline: none;
+            padding: 14px;
+            margin:0px;
+            margin-top: -1px;
+            /*border-radius: 4px;*/
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+        }
+        .inp:focus {
+            border: 1px solid #FF0000;
+        }
+        .inp::placeholder {
+            color: #b1b1b1;
+        }
+
+        /* 꼭지점 한 개에만 굴곡 적용시키기 */
+        .mlm1 {
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+        .mlm2 {
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        #login {
+            display: flex;
+            justify-content: center; /* div 태그 중앙 정렬시키기 */
+            margin-top: 15px;
+        }
+        #loginbtn {
+            width:400px;
+            border-radius: 4px;
+            border: 0px;
+            padding: 15px;
+            font-size:15px;
+            font-weight: bold;
+            color: #FFFFFF;
+            background-color: #FF0038;
+        }
+
+        #checklog {
+            margin: 15px 6px 10px 20px;
+        }
+        #checklog2 {
+            margin-left: 20px;
+        }
+        #emptyspace {
+            height:10px;
+        }
+
+        .hr-sect {
+            display: flex;
+            flex-basis: 100%;
+            align-items: center;
+            color: rgba(44, 44, 44, 0.5);
+            font-size: 13px;
+            font-weight: bold;
+            margin: 30px 0px 15px;
+        }
+        .hr-sect::before {
+            content: "";
+            flex-grow: 1;
+            background: rgba(124, 124, 124, 0.25);
+            height: 1px;
+            font-size: 0px;
+            line-height: 0px;
+            margin: 0px 10px 0px 20px; /* 마진으로 선의 길이를 조절 */
+        }
+        .hr-sect::after {
+            content: "";
+            flex-grow: 1;
+            background: rgba(124, 124, 124, 0.25);
+            height: 1px;
+            font-size: 0px;
+            line-height: 0px;
+            margin: 0px 20px 0px 10px; /* 마진으로 선의 길이를 조절, 마진이 넓을수록 선이 짧아짐 */
+        }
+
+        #linkbox {
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        .minilink {
+            margin: 0px 8px;
+        }
+
+        #bottomlink {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .botlink2 {
+            text-decoration: none;
+            color: black;
+            font-size: 13px;
+        }
+        .circle {
+            color: #DDDDDD;
+            padding-top: 7px;
+            margin-left: 10px;
+            margin-right: 10px;
+            font-size: 3px;
+        }
+
+        #bottomAD {
+            display: flex;
+            justify-content: center;
+            margin-top: 55px;
+        }
+        #bottomcopy {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .botcopy {
+            font-size: 12px;
+            color: #888888;
+            text-decoration: none;
+            margin: 0px 2px;
+        }
+
+        /***************** 체크박스 바꾸는 법 *****************/
+        /*
+            1. 기본 체크박스 비활성화
+            만약 비활성화 하지 않으면 체크박스가 이중으로 중첩됨
+        */
+        input[type=checkbox] {
+            display:none;
+        }
+
+        /*
+            2. 체크박스의 이미지 설정
+            해당 방법은 체크박스 자체를 바꾼다기보단 라벨로 묶여있는 부분의 왼쪽을 늘려
+            체크박스가 있는 곳에 다른 이미지를 넣는 방식이라 <label> 태그가 필수
+            
+            따라서 적절한 공간을 padding 등으로 확보하고 이미지를 background-image를 통해 삽입
+        */
+        input[type=checkbox] + label { 
+            cursor: pointer; 
+            padding-left: 23px; 
+            background-repeat: no-repeat;
+            background-image: url('./img/checker-off.svg');
+        }
+
+        /*
+            3. 상태에 따른 체크박스 이미지 변경
+            체크박스를 누른 상태는 :checked 를 통해 이미지를 설정하고
+            비활성화 상태는 :disabled 를 통해 이미지 설정
+        */
+        input[type=checkbox]:checked + label {
+            background-image: url('./img/checker-on.svg');
+        }
+        input[type=checkbox]:disabled + label {
+            background-image: url('./img/checker-disabled.svg');
+        }
+
+        /***************** input 창에 버튼 넣기 *****************/
+        /*
+            부모 div의 position 속성을 relative로 하고
+            위치를 옮길 버튼의 position 속성을 absolute로 하여
+            top, bottom, right, left 속성을 조절하여 위치 설정
+        */
+        #inputsection #onoff {
+            position:absolute;
+            width:30px;
+            height: 30px;
+            bottom: 8px;
+            right: 8px; /* 오른쪽에서 8px 만큼 떨어져있다는 의미 */
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div id="header">
+            <a href="https://www.11st.co.kr/" target="_blank"><img src="img/11st.svg" alt="No Image" style="width: 75px;"></a>
+        </div>
+        <div id="inputsection">
+            <input type="text" class="inp mlm1" placeholder="아이디 입력">
+            <input type="password" class="inp mlm2" placeholder="비밀번호 8자~20자">
+            <button id="onoff">A</button>
+        </div>
+        <div id="login">
+            <button id="loginbtn" type="button" onclick="location.href='#'" style="cursor: pointer">로그인</button>
+        </div>
+        <div id="emptyspace"></div>
+        <input type="checkbox" id="checklog" style="cursor: pointer"><label id="checklog2"for="checklog" style="cursor: pointer; font-size: 12px;">로그인 상태 유지</label> 
+        
+        <div class="hr-sect">또는 SNS 아이디로 로그인</div>
+        <div id="linkbox">
+            <a class="minilink" href="https://www.kakaocorp.com/page/service/service/KakaoTalk" target="_blank">
+                <img src="img/sns-kakao.svg" alt="No Image">
+            </a>
+            <a class="minilink" href="https://www.naver.com/" target="_blank">
+                <img src="img/sns-naver.svg" alt="No Image">
+            </a>
+            <a class="minilink" href="https://www.tworld.co.kr/web/home" target="_blank">
+                <img src="img/sns-tid.svg" alt="No Image">
+            </a>
+            <a class="minilink" href="https://www.apple.com/kr/" target="_blank">
+                <img src="img/sns-apple.svg" alt="No Image">
+            </a>
+            <a class="minilink" href="https://www.payco.com/" target="_blank">
+                <img src="img/sns-payco.svg" alt="No Image">
+            </a>
+            <a class="minilink" href="https://www.facebook.com/" target="_blank">
+                <img src="img/sns-facebook.svg" alt="No Image">
+            </a>
+            <a class="minilink" href="#" target="_blank">
+                <img src="img/sns-phone.svg" alt="No Image">
+            </a>
+        </div>
+    </section>
+    <footer>
+        <div id="bottomlink">
+            <a class="botlink2" href="#">아이디찾기</a>
+            <span class="circle">●</span> 
+            <a class="botlink2" href="#">비밀번호찾기</a>
+            <span class="circle">●</span> 
+            <a class="botlink2" href="#">비회원 주문조회</a>
+            <span class="circle">●</span> 
+            <a class="botlink2" href="#">회원가입</a>
+        </div>
+        <div id="bottomAD">
+            <a class="botlink2" href="#"><img src="img/banner.png" alt="No Image" style="width: 500px;"></a>
+        </div>
+        <div id="bottomcopy">
+            <span class="botcopy">Copyright © 2019</span>
+            <a href="https://www.11stcorp.com/" class="botcopy">11Street.Co.,Ltd</a>
+            <span class="botcopy">All Rights Reserved.</span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex11_css_pseudo</title>
+    <style>
+        /*
+            ┌──────────────────────────────────────────┐
+            │ ◆ 가상 요소 선택자                       
+            └──────────────────────────────────────────┘
+            pseudo-class : 가상 클래스 선택자. HTML의 상태를 정의, ':' 으로 선택함
+
+            pseudo-element : 가상 요소 선택자. HTML 요소의 특정 부분만 선택, '::' 으로 선택함
+        */
+
+        /* p1 클래스의 첫 번째 글자만 선택*/
+        p.p1::first-letter {
+            color: red;
+        }
+
+        /* p2 클래스의 첫 번째 가로줄만 선택 */
+        p.p2::first-line {
+            background-color: tan;
+        }
+
+        p.p2::first-letter {
+            font-size: 20px;
+        }
+
+        /* input 박스의 안에 들어갈 문구(힌트)를 선택하는 가상 요소 선택자 */
+        input::placeholder {
+            color: magenta;
+            font-size: 20px;
+        }
+
+        /*
+            ────────────────────────────────────────────────────────────────────────────────────
+            가상 요소 선택자 중 가장 중요한 before와 after
+            ────────────────────────────────────────────────────────────────────────────────────
+
+            ::before
+            - 선언된 태그가 만들어지기 전에 바로 앞에 실행하는(만들어지는) 요소
+            ▶ 기준 요소의 컨텐츠가 시작 부분에서 생성할 컨텐츠(content)를 추가
+            - 실제 태그 바로 앞에 생성되는 자식 요소로 인식됨
+
+            ::after
+            - 선언된 태그가 만들어진 후에 바로 뒤에 실행하는(만들어지는) 요소
+            ▶ 기준 요소의 컨텐츠가 끝부분에서 생성할 컨텐츠(content)를 추가
+            - 실제 태그 바로 뒤에 생성되는 자식 요소로 인식됨
+
+            content : before와 after 안에 있는 내용 속성, 흔히 '가짜 속성'
+            - HTML 문서상에 포함되는 요소를 새롭게 생성해주는 속성
+            - HTML 문서상에는 해당 요소가 표시되지 않고 CSS에서만 표시 및 존재
+            - 원래 태그의 용도나 특징도 적용될 수 있음 (링크 용도인 a 태그의 before나 after는 링크의 연장선상으로 취급)
+        */
+
+        /* p3 클래스의 앞에 content로 안녕하세요 추가 */
+        p.p3::before {
+            display: block;
+            content: "안녕하세요";
+            color: red;
+        }
+
+        .test li{
+            line-height: 3em; /* 리스트의 각 항목당 상하 간격이 늘어남 */
+        }
+
+        /* test 클래스의 → li 태그의 → a 태그의 → before 가상 요소 선택 */
+        .test li a::before {
+            content: "맛있는";
+            width: 40px;
+            padding: 3px 6px;
+            margin: 0px 5px;
+            border-radius: 4px;
+            background-color: royalblue;
+            color: wheat;
+            text-align: center;
+        }
+
+        .test li {
+            list-style-type: none;
+            float:left;
+            margin-right: 10px;
+            padding:5px;
+            background-color: thistle;
+        }
+
+        /* 별도의 태그를 넣지 않고 float을 clear 속성으로 없애는 방법 - after 가상 요소에 clear 넣기*/
+        .test::after {
+            content: "";
+            display: block;
+            clear:both;
+        }
+
+        .test1 li {
+            list-style-type: none;
+            float:left;
+            margin-right: 10px;
+            padding:5px;
+            background-color: thistle;
+        }
+
+        .test1::after {
+            content: "";
+            display: block;
+            clear:both;
+        }
+
+        /**************************************************************/
+
+        .sideMenu {
+            border: 2px solid gray;
+            width: 500px;
+            height: 50px;
+        }
+
+        .sideMenu li {
+            list-style-type: none;
+            float: left;
+            padding: 15px 20px;
+        }
+
+        .sideMenu li::after {
+            content: "|";
+            color: gray;
+            margin-right: -23px; /* after의 content를 오른쪽 끝에 붙이고(float) 23px만큼 왼쪽으로 오게 하기*/
+            float: right;
+
+            /* float을 했기 때문에 다른 float 한 요소의 위치에 영향을 미치지 않고 margin으로 자유롭게 배치 가능 */
+            /* float을 쓰지 않고 margin-left를 쓰고 싶으면 각 항목의 거리 조절 필요 */
+        }
+
+        /* 마지막 li의 | 만 지우기 */
+        .sideMenu li:last-of-type::after {
+            content: "";
+        }
+
+        .sideMenu::after {
+            display: block;
+            content: "";
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <p class="p1"> 안녕하세요</p>
+    <p class="p2">
+        정부가 사적모임 인원을 4인으로 제한하고 식당·카페의 영업시간을 오후 9시까지로 하는 현행 사회적 거리두기를 2주간 연장하기로 했습니다.
+        김부겸 국무총리는 오늘(31일) 정부서울청사에서 주재한 코로나19 중앙재난안전대책본부(중대본) 회의에서 “무서운 전파력을 가진 오미크론 변이가 국내에서 본격 확산되기 전에, 선제적으로 대비하기 위해서는 시간이 필요하다”면서 "영업시간 제한, 사적모임 축소 등 현재의 사회적 거리두기를 2주간 더 연장한다"고 밝혔습니다.
+        대신 방역조치로 인한 소상공인과 자영업자의 피해를 보상하기 위해 내년 1분기 손실보상금 500만 원을 '선(先)지급 후(後)정산' 방식으로 지원하기로 했습니다.
+        김 총리는 "올해 4분기에 이어 내년 1분기에도 손실보상이 필요한 상황이다. 정부는 소상공인·자영업자의 아픔을 조금이라도 덜어드리고자 '선지급 후정산' 방식을 택하기로 했다"면서 “약 55만 명을 대상으로 신청을 받아 500만 원을 우선 지급하고, 추후 보상액이 확정되면 정산토록 하겠다"고 설명했습니다.
+        논란이 됐던 청소년 방역패스는 새 학기가 시작되는 3월 1일부터 적용하되, 한 달간의 계도기간을 두기로 했습니다.
+        김 총리는 또 "많은 사람으로 붐비는 백화점과 대형마트에 대해서는 방역패스를 의무화해 방역관리를 한층 강화한다"고 덧붙였습니다.
+    </p>
+    
+    <input type="text" placeholder="아이디를 입력하세요"/>
+    <br><hr><br>
+
+    <p class="p3">지금 이 태그가 기준태그입니다.</p> 
+
+    <br><hr><br>
+
+    <h1> 오늘 점심 메뉴 </h1>
+    <ul class="test">
+        <li><a href="#">일식</a></li>
+        <li><a href="#">중식</a></li>
+        <li><a href="#">한식</a></li>
+        <li><a href="#">양식</a></li>
+        <li><a href="#">잡식</a></li>
+    </ul>
+
+    <ul class="test1">
+        <li><a href="#">login</a></li>
+        <li><a href="#">home</a></li>
+        <li><a href="#">sitemap</a></li>        
+    </ul>
+
+    <p>테스트</p>
+
+    <br><br><hr><br><br>
+
+    <ul class="sideMenu">
+        <li>로그인</li>
+        <li>회원가입</li>
+        <li>마이페이지</li>
+        <li>사이트맵</li>
+    </ul>
+
+    <p>테스트</p>
+</body>
+</html>
