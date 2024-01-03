@@ -2,10 +2,10 @@
 
 // 윤년 판별하기
 
-let year = 2024;
+let year = 2400;
 let str = '';
 
-// 중첩 조건문 사용
+// 중첩 조건문 사용 (비효율적)
 if (year % 4 == 0)
 {
     if (year % 100 == 0)
@@ -33,3 +33,10 @@ else
     str = '평년';
 
 console.log(`${year}년은 ${str}입니다.`);
+
+
+//조건 하나로 쓰기 - refactoring (코드 개선)
+if ( (year % 4 == 0) && ((year % 100 != 0) || (year % 400 == 0)))
+    console.log(`${year}년은 윤년입니다.`);
+else
+    console.log(`${year}년은 평년입니다.`);
