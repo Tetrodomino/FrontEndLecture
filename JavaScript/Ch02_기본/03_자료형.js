@@ -8,3 +8,6 @@ console.log(5 / 3); //소숫점 약 15자리 정도까지 출력
 console.log( 2 ** 10); // 2의 10제곱 2^10 
 
 console.log(1.3e-8); // 1.3 * 10^(-8)
+
+// 2. 문자열(string)
+console.log('He said i love you');
