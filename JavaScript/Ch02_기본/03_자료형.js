@@ -45,4 +45,4 @@ console.log(2 == 2.0, 5 >= 4, !('가나다' > '마바사')); //셋 모두 true
 let x = 10;
 console.log(x < 3 || x > 8 ); // ||은 논리 연산자라고 하며 &&(and)와 ||(or) 등이 존재
 console.log(x < 12 && x > 8); // && = and
-console.log(true > 2) //true를 그냥 변수처럼 쓰면 1로 판정 (false 는 0)
+console.log(true > 2) //true를 그냥 변수처럼 쓰면 1로 판정 (false 는 0으로 판정)
