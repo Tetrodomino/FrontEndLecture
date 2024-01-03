@@ -59,4 +59,7 @@ console.log(obj); //obj 전체가 출력 : {x: 1, y: 2}
 let alpha; // 값을 주지 않고 변수만 선언하면 undefined 타입이 됨
 
 console.log(typeof alpha, typeof beta); //alpha는 초기화하지 않은 값이고, beta는 선언하지 않았으므로
-                                        //둘 다 undefined 로 나옴
+                                        //둘 다 타입이 undefined 로 나옴
+
+alpha = 1; beta = 2;
+console.log(typeof alpha, typeof beta); //값을 할당했으므로 number로 나옴
