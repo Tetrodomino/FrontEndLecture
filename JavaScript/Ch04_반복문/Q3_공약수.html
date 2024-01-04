@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3_공약수</title>
+    <script>
+        function drawDiamond() {
+            let num1 = Number(document.getElementById('num1').value)
+            let num2 = Number(document.getElementById('num2').value)
+            let yaksu = '1';
+
+            for (let i = 2; i <= Math.min(num1, num2); i++)
+            {
+                if (num1 % i == 0 && num2 % i == 0)
+                    yaksu += ', ' + i;
+            }
+
+            // 입력창 아래에 갱신하여 출력
+            let resultTag = document.getElementById('result');
+            resultTag.innerHTML = yaksu;
+        }
+    </script>
+</head>
+<body>
+    <h3>다이아몬드 그리기</h3>
+    <hr>
+    <input type="text" id="num1" placeholder="자연수를 입력">
+    <input type="text" id="num2" placeholder="자연수를 입력">
+    <button onclick="drawDiamond()">확인</button> <!-- 버튼을 누르면 drawDiamond() 함수 실행 -->
+    <hr>
+    <div id="result"></div>
+</body>
+</html>
