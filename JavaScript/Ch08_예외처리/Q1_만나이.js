@@ -2,7 +2,7 @@
 let birthday = {year: 1990, month: 6, day: 20};
 
 let d = new Date();
-let current = {year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDay()};
+let current = {year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate()};
 
 let age = current.year - birthday.year;
 if (current.month < birthday.month || current.day < birthday.day)

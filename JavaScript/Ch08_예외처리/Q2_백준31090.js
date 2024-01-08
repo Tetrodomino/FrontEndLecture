@@ -5,16 +5,13 @@ function isDivisible(year) {
     let year_nn = year % 100;
 
     if (year2 % year_nn == 0)
-        return true;
+        return 'Good';
 
-    return false;
+    return 'bye';
 }
 
 for (let i = 2023; i <= 2040; i++)
 {
-    if (isDivisible(i))
-        console.log('Good');
-    else
-        console.log('bye');
+    console.log(`${i}: ${isDivisible(i)}`);
 }
 
