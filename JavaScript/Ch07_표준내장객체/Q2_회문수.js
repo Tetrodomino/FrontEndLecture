@@ -4,7 +4,7 @@ let numArr = new Array();
 
 for (let i = 100; i<= 999; i++)
 {
-    for (let k = 100; k <= 999; k++)
+    for (let k = i; k <= 999; k++)
     {
         let num = i * k;
         let numArr2 = [];
