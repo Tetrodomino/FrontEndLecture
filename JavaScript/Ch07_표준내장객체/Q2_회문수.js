@@ -28,3 +28,4 @@ numArr.sort((a, b) => a[0] + a[1] + a[2] - (b[0] + b[1] + b[2])); // 2차원 배
 //numArr.sort((a, b) => b[0] + b[1] + b[2] - (a[0] + a[1] + a[2]));
 let max = numArr.pop();
 console.log(`${max[1]} × ${max[2]} = ${max[0]}`);
+console.log(numArr);

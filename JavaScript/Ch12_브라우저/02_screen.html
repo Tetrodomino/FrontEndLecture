@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>screen 객체</title>
+    <script>
+        /*
+            원래는 script가 실행되고 나서 body 부분이 실행되지만 
+            window.onload를 쓰면 body 내용을 다 표시한 후에 실행
+        */
+        window.onload = function() {
+            let attr = `width: ${screen.width}<br>`;
+            attr += `height: ${screen.height}<br>`;
+            attr += `availWidth: ${screen.availWidth}<br>`;     // 대소문자 구분하니까 주의
+            attr += `availHeight: ${screen.availHeight}<br>`;
+            attr += `colorDepth: ${screen.colorDepth}<br>`;
+            attr += `pixelDepth: ${screen.pixelDepth}<br>`;
+
+            // 문서 상의 'info' id가 있는 태그의 내부에 attr을 대입
+            document.getElementById('info').innerHTML = attr
+        }
+    </script>
+</head>
+<body style="margin: 50px">
+    <h3 id="info"></h3>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성순서</title>
+    <script>
+        alert('Head alert');
+    </script>
+</head>
+<body>
+    <h1>Header 1</h1>
+    <script>alert('Body 1')</script>
+    <h4>Header 2</h4>
+    <script>alert('Body 2')</script>
+
+    <!-- 창을 실행하면
+        
+        Head alert → Header 1 → Body 1 → Header 2 → Body 2
+        
+        순서로 실행-->
+</body>
+</html>

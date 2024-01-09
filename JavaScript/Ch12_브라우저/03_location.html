@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location/Histoty 객체</title>
+    <script>
+        function delayedMove() {
+            let waitTag = document.getElementById('wait');
+            waitTag.setAttribute('src', 'please-wait.gif'); // 사이트 지연 이동을 누르면 이미지 출력
+
+            // 3초가 지난 다음 location.href로 지정한 링크로 이동하는 함수 실행
+            setTimeout(() => {
+                location.href = 'https://www.naver.com/';
+            }, 3000);
+        }
+
+        // 호스트 이름이나 링크 등 location 정보를 표시하는 함수
+        function displayInfo() {
+            let attr = `href: ${location.href}<br>`;
+            attr += `hostname: ${location.hostname}<br>`;
+            attr += `port: ${location.port}<br>`;
+            attr += `pathname: ${location.pathname}<br>`;
+
+            document.getElementById('info').innerHTML = attr;
+        }
+    </script>
+</head>
+<body style="margin: 50px">
+    <!-- 버튼을 클릭(onclick)하면 location.href가 지정해준 링크로 이동 -->
+    <button onclick="location.href='https://www.naver.com/'">사이트 이동</button>
+
+    <!-- 버튼을 클릭(onclick)하면 delayedMove() 함수가 실행 -->
+    <button onclick="delayedMove()">사이트 지연 이동</button>
+
+    <!-- 앞으로 가기랑 뒤로 가기 버튼으로 구현하기 -->
+    <button onclick="history.forward()">앞으로</button>
+    <button onclick="history.back()">뒤로</button>
+
+    <button onclick="displayInfo()">정보 표시</button>
+
+    <hr>
+    <h3 id="info"></h3>
+    <img id="wait" src="" alt="">
+</body>
+</html>

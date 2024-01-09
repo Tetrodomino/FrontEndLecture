@@ -21,3 +21,17 @@ let minutecount = minute.replace(/[^3]/g, '').length;
 let count = hourcount * 60 * 60 + (24 - hourcount) * 60 * minutecount;
 
 console.log(`3이 표시되는 시간(초): ${count}`);
+
+
+// 다른 방법
+let display = 0;
+for (let hour = 0; hour < 24; hour++)
+{
+    for (let minute = 0; minute < 60; minute++)
+    {
+        let clock = hour + ':' + minute;
+        if (clock.indexOf('3') >= 0)
+            display += 60;
+    }
+}
+console.log(`3이 표시되는 시간 2 : ${display}`);
