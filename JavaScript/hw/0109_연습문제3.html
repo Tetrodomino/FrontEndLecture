@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가격 내림차순</title>
+    <script>
+        window.onload = function() {
+            const btn = document.getElementById('btn');
+            btn.onclick = function() {
+                let text = document.getElementById('num').value;
+                if (text == null)
+                {
+                    alert('텍스트를 입력하지 않았습니다!');
+                    return;
+                }
+                
+                sortprint(text);
+            }
+        }
+
+        function sortprint(text) {
+            let costArr = text.split(';');
+            costArr.sort((a, b) => b - a);
+
+            let output = '';
+            for (let i = 0; i < costArr.length; i++)
+            {
+                output += costArr[i]
+                if (i != costArr.length - 1)
+                    output += ', ';
+            }
+
+            document.getElementById('result').innerHTML = output;
+        }
+    </script>
+</head>
+<body>
+    <h1>영수증 만들기</h1>
+    <input type="text" id="num" placeholder="각 항목은 ;로 구분" style="width: 500px;">
+    <button id="btn">내림차순 정렬</button>
+    <h3>※ 각 항목은 ;로 구분합니다</h3>
+    <hr>
+    <div id="result"></div>
+</body>
+</html>

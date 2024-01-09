@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the의 개수 출력하기</title>
+    <script>
+        window.onload = function() {
+            const btn = document.getElementById('btn');
+            btn.onclick = function() {
+                let text = document.getElementById('text').value;
+                if (text == null)
+                {
+                    alert('텍스트를 입력하지 않았습니다!');
+                    return;
+                }
+                
+                printthe(text);
+            }
+        }
+
+        function printthe(text) {
+            text = ' ' + text;
+            let count = 0;
+
+            // 정규식을 모를 때 어거지로 쓰기
+            for (let i = 0; i < text.length; i++)
+            {
+                if (text[i] != ' ')
+                    continue;
+                
+                if (text[i+1] != 't')
+                    continue;
+
+                if (text[i+2] != 'h')
+                    continue;
+
+                if (text[i+3] != 'e')
+                    continue;
+
+                if (text[i+4] != ' ' && text[i+4] != ',' && text[i+4] != '.')
+                    continue;
+
+                count += 1;
+            }
+
+            // 정식 방법 : the 앞이나 뒤에 다른 것이 붙는 것을 정규식으로 제거하고 세기
+            text = text.replace(/the[a-zA-Z]/g, '');
+            text = text.replace(/[a-zA-Z]the/g, '');
+
+            let textArr = text.split('the');
+
+            document.getElementById('result').innerHTML = textArr.length - 1;
+        }
+    </script>
+</head>
+<body>
+    <h1>the의 개수를 세는 페이지</h1>
+    <textarea cols="80" rows="10" id="text"></textarea>
+    <button id="btn">the는 몇 개인가</button>
+    <h3>※ 소문자로 이루어진 'the'만 셉니다</h3>
+    <hr>
+    <div id="result"></div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 생성</title>
+    <style>
+        .class1 {
+            color: blue;
+        }
+        .class2 {
+            background-color: azure;
+        }
+    </style>
+    <script>
+        var count = 1;
+        function addNode() {
+            const h3 = document.createElement('h3');
+            h3.classList.add('class1', 'class2');  // h3에 class1과 class2 클래스 추가
+
+            const textNode = document.createTextNode('홍길동' + count++);
+            h3.appendChild(textNode); // h3의 내용에 textNode(홍길동) 추가
+            // 이 두 줄은 h3.innerHTML = '홍길동' 으로 대체 가능
+
+            document.getElementById('point').appendChild(h3); // point id가 있는 태그 가장 아래쪽에 h3 태그 추가 
+            // 아래쪽에 1번이 오고싶게 하고 싶으면 appendChild 대신 prepend 사용
+        }
+
+        function removeNode() {
+            const h3 = document.querySelector('.class1.class2');
+            document.getElementById('point').removeChild(h3); // point id가 있는 태그 안의 h3 태그 위에서부터 삭제
+        }
+    </script>
+</head>
+<body style="margin: 50px">
+    <h3>당신의 이름은 무엇입니까</h3>
+    <button onclick="addNode()">추가</button>
+    <button onclick="removeNode()">삭제</button>
+    <hr>
+    <div id="point"></div>
+    <p>실험용 문장</p>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2의 거듭제곱 출력</title>
+    <script>
+        window.onload = function() {
+            const btn = document.getElementById('btn');
+            btn.onclick = function() {
+                let num1 = parseInt(document.getElementById('num1').value);
+                let num2 = parseInt(document.getElementById('num2').value);
+                if (num1 < 1) num1 = 1;
+                if (num1 > 20) num1 = 20;
+                if (num2 < 10) num2 = 10;
+                if (num2 > 30) num2 = 30;
+                if (num1 + 4 > num2) num2 = num1 + 4;
+                
+                printArr(num1, num2);
+            }
+        }
+
+        function printArr(num1, num2) {
+            let numArr = []; // 사실 배열은 사용하지 않지만 데이터 저장을 위해 생성하는 습관을 
+            let text = document.getElementById('result')
+
+            for (let i = num1; i <= num2; i++)
+            {
+                numArr.push(Math.pow(2, i));
+                text.innerHTML += Math.pow(2, i);
+                if (i != num2)
+                    text.innerHTML += ', ';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>2의 거듭제곱 배열 출력하기</h1>
+    <input type="number" id="num1" placeholder="1 ~ 20까지 입력">
+    <input type="number" id="num2" placeholder="10 ~ 30까지 입력">
+    <button id="btn">배열 생성</button>
+    <h3>※ 범위를 벗어난 값을 입력 시 범위 내의 값으로 강제 조정됩니다</h3>
+    <hr>
+    <div id="result"></div>
+</body>
+</html>
