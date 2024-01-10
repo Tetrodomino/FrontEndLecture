@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트</title>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(() => {
+            // h1에 대해 이벤트 생성
+            // 마우스를 올리고 내렸을 때 함수 발동
+            $('h1').on('mouseover', function(e) {
+                $(this).css('backgroundColor', 'yellow');
+            })
+            .on('mouseout', function(e) {
+                $(this).css('backgroundColor','white');
+            });
+
+            // 클릭할 때 함수 발동, 클릭은 워낙 많이 써서 별도의 메소드로 사용
+            $('h1').click(function (e) {
+                alert($(this).text());
+            });
+        });
+    </script>
+</head>
+<body style="margin: 50px;">
+    <h1>Header A</h1>
+    <h1>Header B</h1>
+</body>
+</html>

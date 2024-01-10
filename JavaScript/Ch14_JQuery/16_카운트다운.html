@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카운트다운 만들기</title>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    <script>
+        var count = 3;
+        function disp(num) {
+            $('<img></img>')
+                .attr('src', `../Ch13_문서객체모델/img/${num}.svg`)
+                .attr('width', 500)
+                .attr('id', 'second')
+                .css('margin', '30px')
+                .appendTo($('#show'));
+        }
+
+        function hide() {
+            $('#second').remove(); // 위에서 만든 second id가 달린 태그 삭제
+        }
+
+        $(document).ready(() => {
+            disp(count--);
+
+            // 1000ms의 간격마다 실행
+            let si = setInterval( function() {
+                hide(); // 1초 후에 만든 태그 삭제
+
+                if (count != 0)
+                    disp(count--); // count가 0이 아니면 다시 실행
+                else
+                {
+                    $('<h3></h3>')
+                        .text(`결과는 ${Math.ceil(Math.random() * 6)} 입니다`)
+                        .appendTo($('#show'));
+                }
+            }, 1000);
+
+            // 시간(3100ms)이 다 되면 setInterval 함수 종료
+            setTimeout(() => {
+                clearInterval(si);
+            }, 3100)
+        });
+
+    </script>
+</head>
+<body style="margin: 50px;">
+    <h1>3초 후에 결과 보여주기</h1>
+    <hr>
+    <div id="show"></div>
+</body>
+</html>

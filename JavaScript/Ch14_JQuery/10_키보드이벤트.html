@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키보드이벤트</title>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(() => {
+
+            // input 태그에 키보드가 입력될 때 이벤트 실행
+            $('input')
+                .on('keyup', function(e) {
+                    $('#keyup').text($(this).val()); //this.val()은 input 태그에 입력된 글자를 의미함
+                })
+                .on('change', function(e) { // 엔터키를 쳤을 때 실행
+                    $('#change').text($(this).val());  // 마찬가지로 input에 입력된 값들을 #chnage가 있는 태그에 복사
+                })
+        });
+    </script>
+</head>
+<body style="margin: 50px;">
+    입력 : <input type="text">
+    <hr>
+    <div>
+        글자를 입력할 때마다 어떤 글자가 입력되었는지:
+        <span id="keyup"></span>
+    </div>
+    <div>
+        글자를 입력하고 엔터를 쳤을 때:
+        <span id="change"></span>
+    </div>
+</body>
+</html>
