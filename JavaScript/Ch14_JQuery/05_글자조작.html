@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자조작</title>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(() => {
+            alert($('#first').text()) // first id를 가진 태그의 text를 출력 (First Header)
+            alert($('#first').html()) // text 뿐만이 아닌 태그 부분도 같이 출력 (First <span style="color: brown;">Header</span>)
+            
+            alert($('h1').text()); // 모든 h1 태그의 텍스트만 붙여서 출력
+            alert($('h1').html()); // 첫 번째 h1 태그의 텍스트와 태그를 출력
+
+            $('h1').text('text() method로 <span style="color: brown;">변경</span>');
+            // 모든 h1 태그의 내용이 ' ' 안에 있는 걸로 변경
+
+            $('h1').html('html() method로 <span style="color: brown;">변경</span>');
+            // 마찬가지로 모든 h1 태그의 내용 변경
+            // 단, html을 썼으므로 <span> 부분이 반영됨
+
+        });
+    </script>
+</head>
+<body style="margin: 50px;">
+
+    <h1 id="first">First <span style="color: brown;">Header</span></h1>
+
+    <h1>Second <span style="color: brown;">Header</span></h1>
+
+    <h1 id="third">Third Header</h1>
+
+</body>
+</html>

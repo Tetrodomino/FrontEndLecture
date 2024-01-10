@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>특성조작</title>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(() => {
+            // attr : 태그의 특성을 조작 가능
+            // img 태그의 src와 width를 변경
+            $('img').attr('src', 'https://picsum.photos/640/360')
+                    .attr('width', '320px');
+            
+            // img 태그 4개 생성하기
+            for (let i = 0; i < 4; i++)
+            {
+                $('<img></img>').css('margin', '5px')
+                                .attr('src', 'https://picsum.photos/200/200?q=' + i)
+                                .appendTo('body');
+            }
+        });
+    </script>
+</head>
+<body style="margin: 50px;">
+    <img>
+    <hr>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문</title>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            // 모든 li 태그 호출
+            let lis = $('li');
+
+            // 반복문을 통해 대입하는 방법 1 - for를 사용하기
+            for(let i = 0; i < lis.length; i++)
+            {
+                if (i % 2 == 1) // 짝수 번째 i
+                {
+                    let li = lis.get(i); // i번째 li 대입
+                    $(li).css('backgroundColor', 'yellow'); //li의 배경색 변경
+                }
+            }
+
+            // 반복문을 통해 대입하는 방법 2 - each 메소드 사용
+            $('li').each(function(index, element) {
+                if (index % 2 == 0)
+                    $(this).css('backgroundColor', 'cyan'); // this는 해당 element를 나타냄
+                else   
+                    $(element).css('color', 'red');
+            });
+
+            $('span').each(function (index, _) {
+                if (index % 2 == 0)
+                    $(this).css('fontSize', '30px');
+                else
+                    $(this).css('fontSize', '20px');
+            });
+        });
+    </script>
+</head>
+<body style="margin: 50px;">
+    <ul id="fruits"><span>내가 좋아하는 과일</span>
+        <li class="national">사과</li>
+        <li class="foreign">바나나</li>
+        <li class="national">감</li>
+        <li class="foreign">파인애플</li>
+    </ul>
+    <ul id="food"><span>내가 좋아하는 음식</span>
+        <li class="national">불고기</li>
+        <li class="foreign">파스타</li>
+        <li class="national">김치찌개</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 객체</title>
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+  <script>
+        // javaScript 사용
+        window.onload = function () {
+            document.querySelector('h1').innerHTML = '자바스크립트가 생성';
+            document.querySelector('h1').color = 'red';
+        }
+
+        // jQuery 사용
+        $(document).ready(function () {
+            // $을 통해 태그를 호출하고 text, css 메소드로 값 변경
+            $('h1').text('jQuery가 생성').css('color', 'blue');
+        });
+  </script> 
+</head>
+<body style="margin: 50px">
+    <h1></h1>
+</body>
+</html>
