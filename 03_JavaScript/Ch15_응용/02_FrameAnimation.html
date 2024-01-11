@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frame Animation</title>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(() => {
+            let frames = [];
+            for (let i = 0; i <= 14; i++)
+            {
+                frames.push(`human/${i}.png`); // 이미지 링크 저장
+            }
+
+            let count = 0;
+
+            setInterval(() => {
+                // count가 오름에 따라 img의 이미지 변경
+                $('#image').attr('src', frames[count++ % frames.length]);
+            }, 1000 / 30); // 초당 30번
+        });
+    </script>
+</head>
+<body style="margin: 50px">
+    <img id="image">
+</body>
+</html>
