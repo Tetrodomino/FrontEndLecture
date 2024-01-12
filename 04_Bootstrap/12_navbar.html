@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 5 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <style>
+     * { font-family: 'Noto Sans KR', sans-serif; }
+     a { text-decoration: none; }
+  </style> 
+</head>
+<body style="height: 1500">
+  <nav class="navbar navbar-expand-sm bg-light"> <!-- 네브바 만들기 navbar -->
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item"> <!-- 네브바의 각 항목 nav-item -->
+          <a class="nav-link" href="#">Link 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link 3</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 가운데에 배치하기 justify-content-center -->
+  <nav class="navbar navbar-expand-sm bg-light justify-content-center" style="margin-top: 50px">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link 1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link 2</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link 3</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- 배경 색상 변경 bg-색상 -->
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark mt-4">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 각종 기능 -->
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Logo</a> <!-- 로고 붙이기 navbar-brand -->
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown"> <!-- 드롭다운 -->
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dropdown</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Link</a></li>
+            <li><a class="dropdown-item" href="#">Another link</a></li>
+            <li><a class="dropdown-item" href="#">A third link</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+      <span class="navbar-text me-3">환영합니다</span> <!-- 오른쪽 끝에 문구 붙이기 navbar-text -->
+
+      <!-- 검색창 붙이기 d-flex -->
+      <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search">
+        <button class="btn btn-primary" type="button">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <!-- 상단에 고정시키는 fixed-top -->
+  <!-- 하단에 고정시키는 fixed-bottom-->
+  <nav class="navbar navbar-expand-sm bg-light navbar-dark fixed-bottom">
+    <div class="container-fluid justify-content-center">
+      Copyright &copy; 2024 휴먼교육센터, All rights reserved
+    </div>
+  </nav>
+</body>
+</html>
